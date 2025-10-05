@@ -18,7 +18,7 @@ public class WitnessPR : BettingRole
         {
             if (character.id != charRef.id)
             {
-                bool confess = character.dataRef.name == "Betting Confessor";
+                bool confess = character.dq().name == "Betting Confessor";
                 bool corrupt = character.statuses.fo(ECharacterStatus.Corrupted);
                 bool bluff = character.bluff != null && !character.statuses.fo(ECharacterStatus.HealthyBluff);
                 if (!confess && (corrupt || bluff))
@@ -61,7 +61,7 @@ public class WitnessPR : BettingRole
         {
             if (character.id != charRef.id)
             {
-                bool confess = character.dataRef.name == "Betting Confessor";
+                bool confess = character.dq().name == "Betting Confessor";
                 bool corrupt = character.statuses.fo(ECharacterStatus.Corrupted);
                 bool bluff = character.bluff != null && !character.statuses.fo(ECharacterStatus.HealthyBluff);
                 if (confess || !(corrupt || bluff))
